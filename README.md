@@ -45,17 +45,6 @@ pip install -r requirements.txt
 
 Copy `.env.example` to `.env` and set values.
 
-Example:
-
-```env
-OPENWEATHER_API_KEY=your_openweather_key
-MODEL_DIR=ML/models
-ALLOWED_ORIGINS=*
-FIREBASE_PROJECT_ID=your-firebase-project-id
-FIREBASE_CREDENTIALS_PATH=path/to/serviceAccountKey.json
-```
-
-You can also provide `FIREBASE_CREDENTIALS_JSON` instead of `FIREBASE_CREDENTIALS_PATH`.
 
 ### 3) Firebase setup (Firestore)
 
@@ -66,29 +55,13 @@ You can also provide `FIREBASE_CREDENTIALS_JSON` instead of `FIREBASE_CREDENTIAL
    - `FIREBASE_CREDENTIALS_PATH`, or
    - `FIREBASE_CREDENTIALS_JSON`
 
-### 4) Prepare data and train models
 
-```powershell
-python -m ML.src.train_models `
-  --base-csv ML/data/final_training_lean_model_ready_with_season.csv `
-  --soil-csv path\to\soil_dataset.csv `
-  --ndvi-csv path\to\ndvi_dataset.csv `
-  --output-dir ML/models
-```
-
-`--ndvi-csv` is optional.
 
 ### 5) Run backend API
 
 ```powershell
 uvicorn backend.main:app --reload --host 0.0.0.0 --port 8000
 ```
-
-Open API docs:
-
-- [http://localhost:8000/docs](http://localhost:8000/docs)
-
-## API Examples
 
 ### Yield prediction
 
@@ -119,21 +92,9 @@ curl -X POST "http://localhost:8000/predict-yield" \
 
 ```
 
-### Weather alert
-
-```bash
-curl -X POST "http://localhost:8000/weather-alert" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "latitude": 23.0225,
-    "longitude": 72.5714,
-    "district": "Ahmedabad"
-  }'
-```
-
 ## Data Download References
 
-- ICRISAT: [http://data.icrisat.org/dld/](http://data.icrisat.org/dld/)
+
 - Kaggle crop recommendation: [https://www.kaggle.com/datasets/uthmordewanta/crop-recommendation-dataset](https://www.kaggle.com/datasets/uthmordewanta/crop-recommendation-dataset)
 - NASA HLS NDVI: [https://data.nasa.gov/dataset/hls-sentinel-2-multi-spectral-instrument-vegetation-indices-daily-global-30-m-v2-0-90ed0](https://data.nasa.gov/dataset/hls-sentinel-2-multi-spectral-instrument-vegetation-indices-daily-global-30-m-v2-0-90ed0)
 - ISRO VEDAS: [https://vedas.sac.gov.in/vegetation-monitoring/](https://vedas.sac.gov.in/vegetation-monitoring/)
