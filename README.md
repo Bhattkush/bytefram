@@ -116,49 +116,7 @@ curl -X POST "http://localhost:8000/predict-yield" \
 
 ### Crop recommendation
 
-```bash
-curl -X POST "http://localhost:8000/crop-recommend" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "district": "Ahmedabad",
-    "season": "Kharif",
-    "year": 2020,
-    "temperature_avg": 27.9,
-    "temperature_min": 21.8,
-    "temperature_max": 35.5,
-    "rainfall": 980,
-    "humidity": 71,
-    "n": 80,
-    "p": 40,
-    "k": 35,
-    "ph": 6.4,
-    "organic_carbon": 0.70,
-    "top_k": 3
-  }'
-```
 
-### Disease risk
-
-```bash
-curl -X POST "http://localhost:8000/disease-risk" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "user_id": "u001",
-    "district": "Ahmedabad",
-    "season": "Kharif",
-    "year": 2020,
-    "crop": "Cotton(lint)",
-    "temperature_avg": 29.0,
-    "temperature_min": 24.0,
-    "temperature_max": 35.0,
-    "rainfall": 1200,
-    "humidity": 82,
-    "n": 70,
-    "p": 38,
-    "k": 40,
-    "ph": 6.7,
-    "organic_carbon": 0.80
-  }'
 ```
 
 ### Weather alert
