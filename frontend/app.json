@@ -1,0 +1,41 @@
+{
+  "expo": {
+    "name": "ByteFarm",
+    "slug": "bytefarm",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1B5E20"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bytefarm.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "ByteFarm uses your location to provide accurate crop recommendations for your region."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1B5E20"
+      },
+      "package": "com.bytefarm.app",
+      "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_COARSE_LOCATION"]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "ByteFarm uses your location to provide accurate crop recommendations."
+        }
+      ]
+    ]
+  }
+}

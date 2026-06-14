@@ -1,0 +1,13 @@
+{
+  "Temperature_Avg": 31.02,
+  "Temperature_Min": 14.2,
+  "Temperature_Max": 45.0,
+  "Rainfall": 29.98,
+  "Humidity": 39.96,
+  "Temp_Range": 30.8,
+  "Seasonal_Rainfall": 29.98,
+  "Seasonal_Rainfall_mm": 29.98,
+  "Climate_Years": 10,
+  "Climate_Period": "Last 10 years",
+  "_timestamp": 1775111770.884564
+}
